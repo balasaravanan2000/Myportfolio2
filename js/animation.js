@@ -1,14 +1,8 @@
-/**
- * Portfolio - Animations JavaScript
- * Author: John Doe
- * Version: 1.0
- */
 
-// DOM Elements for cursor
 const cursor = document.querySelector('.cursor');
 const cursorFollower = document.querySelector('.cursor-follower');
 
-// ---- Custom Cursor Animation ----
+
 function setupCustomCursor() {
   if (!cursor || !cursorFollower) return;
 
@@ -16,14 +10,14 @@ function setupCustomCursor() {
     cursor.style.left = `${e.clientX}px`;
     cursor.style.top = `${e.clientY}px`;
     
-    // Apply a small delay for the follower for a nice effect
+   
     setTimeout(() => {
       cursorFollower.style.left = `${e.clientX}px`;
       cursorFollower.style.top = `${e.clientY}px`;
     }, 50);
   });
   
-  // Change cursor size on clickable elements
+  
   const clickableElements = document.querySelectorAll('a, button, .btn, .project-item, .nav-toggle, .filter-btn');
   
   clickableElements.forEach(element => {
@@ -50,7 +44,7 @@ function setupCustomCursor() {
     });
   });
   
-  // Hide cursor when leaving the window
+ 
   document.addEventListener('mouseout', () => {
     cursor.style.opacity = '0';
     cursorFollower.style.opacity = '0';
@@ -61,7 +55,7 @@ function setupCustomCursor() {
     cursorFollower.style.opacity = '0.6';
   });
   
-  // Scale on click
+ 
   document.addEventListener('mousedown', () => {
     cursor.style.transform = 'translate(-50%, -50%) scale(0.8)';
     cursorFollower.style.transform = 'translate(-50%, -50%) scale(0.8)';
@@ -73,9 +67,9 @@ function setupCustomCursor() {
   });
 }
 
-// ---- Parallax Effects ----
+
 function setupParallaxEffects() {
-  // Simple parallax for hero section
+ 
   const heroSection = document.querySelector('.hero');
   const heroContent = document.querySelector('.hero-content');
   
@@ -84,17 +78,17 @@ function setupParallaxEffects() {
   window.addEventListener('scroll', () => {
     const scrollPosition = window.scrollY;
     if (scrollPosition < window.innerHeight) {
-      // Apply parallax effect with different speeds
+      
       const translateY = scrollPosition * 0.3;
       heroContent.style.transform = `translateY(${translateY}px)`;
       
-      // Adjust opacity for fade effect
+     
       const opacity = 1 - (scrollPosition / (window.innerHeight * 0.8));
       heroContent.style.opacity = Math.max(opacity, 0.3);
     }
   });
   
-  // Mouse movement parallax for hero
+
   heroSection.addEventListener('mousemove', (e) => {
     const moveX = (e.clientX - window.innerWidth / 2) * 0.01;
     const moveY = (e.clientY - window.innerHeight / 2) * 0.01;
@@ -106,7 +100,7 @@ function setupParallaxEffects() {
   });
 }
 
-// ---- Smooth Anchor Scrolling ----
+
 function setupSmoothScrolling() {
   const scrollLinks = document.querySelectorAll('a[data-scroll]');
   
@@ -129,17 +123,17 @@ function setupSmoothScrolling() {
   });
 }
 
-// ---- Page Loading Animation ----
+
 function setupPageLoader() {
-  // Add a class to the body for initial loading state
+  
   document.body.classList.add('is-loading');
   
-  // Remove it once everything is loaded
+  
   window.addEventListener('load', () => {
     setTimeout(() => {
       document.body.classList.remove('is-loading');
       
-      // Animate hero elements in sequence
+    
       document.querySelectorAll('.hero-text > *').forEach((element, index) => {
         setTimeout(() => {
           element.classList.add('show');
@@ -149,7 +143,7 @@ function setupPageLoader() {
   });
 }
 
-// ---- Button Hover Effects ----
+
 function setupButtonEffects() {
   const buttons = document.querySelectorAll('.btn');
   
@@ -173,7 +167,7 @@ function setupButtonEffects() {
   });
 }
 
-// ---- Project Item Hover Effects ----
+
 function setupProjectEffects() {
   const projectItems = document.querySelectorAll('.project-item');
   
@@ -196,15 +190,15 @@ function setupProjectEffects() {
   });
 }
 
-// Initialize animations when the DOM is loaded
+
 document.addEventListener('DOMContentLoaded', () => {
-  // Check if we're on a device that supports hover
+ 
   const supportsHover = window.matchMedia('(hover: hover)').matches;
   
   if (supportsHover) {
     setupCustomCursor();
   } else {
-    // Hide cursor elements on touch devices
+ 
     const cursor = document.querySelector('.cursor');
     const cursorFollower = document.querySelector('.cursor-follower');
     

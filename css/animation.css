@@ -1,10 +1,4 @@
-/* 
- * Portfolio - Animations Stylesheet
- * Author: John Doe
- * Version: 1.0
- */
 
-/* ---- Keyframes Animations ---- */
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
@@ -82,7 +76,7 @@
   }
 }
 
-/* ---- Animation Classes ---- */
+
 .fade-in {
   animation: fadeIn 1s ease forwards;
 }
@@ -103,7 +97,7 @@
   animation: scaleUp 0.8s ease forwards;
 }
 
-/* ---- Reveal Animations for Scroll ---- */
+
 [data-aos] {
   opacity: 0;
   transition: opacity 0.8s ease, transform 0.8s ease;
@@ -134,7 +128,7 @@
   transform: translate(0) scale(1);
 }
 
-/* ---- Element-Specific Animations ---- */
+
 .avatar-bg {
   animation: float 6s ease-in-out infinite;
 }
@@ -169,7 +163,7 @@
   animation: slideInRight 1s ease-out forwards 0.5s;
 }
 
-/* ---- Interactive Element Animations ---- */
+
 .btn {
   position: relative;
   overflow: hidden;
